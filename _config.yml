@@ -1,0 +1,21 @@
+title: CSS Advanced
+email: kdankov@devrix.com
+description: Hi there!
+baseurl: ""
+url: ""
+twitter_username: kdankov
+github_username: kdankov
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
