@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ site.title }}</title>
+    <title>
+        {% if page.title != 'Home' %}
+            {{ page.title }} - {{ site.title }}
+        {% else %}
+            {{ site.title }}
+        {% endif %}
+    </title>
     <script>
         window.addEventListener('load', (event) => {
             document.querySelector('body').classList.add('loaded');
@@ -15,6 +21,7 @@
 </head>
 <body class="page-{{ page.title | slugify }}">
 
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <div class="site">
 
         <header class="site-header">

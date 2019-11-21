@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CSS Advanced</title>
+    <title>
+        
+            Contacts - CSS Advanced
+        
+    </title>
     <script>
         window.addEventListener('load', (event) => {
             document.querySelector('body').classList.add('loaded');
@@ -15,6 +19,7 @@
 </head>
 <body class="page-contacts">
 
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <div class="site">
 
         <header class="site-header">
@@ -24,7 +29,8 @@
                 <p>Hi there!</p>
             </div>
 
-            <nav class="nav location-header">
+            <label for="nav-toggle" class="nav-toggle-label">Menu</label>
+<nav class="nav location-header">
     <ul>
 
     
@@ -80,7 +86,8 @@
 
         <footer class="site-footer">
 
-            <nav class="nav location-footer">
+            <label for="nav-toggle" class="nav-toggle-label">Menu</label>
+<nav class="nav location-footer">
     <ul>
 
     

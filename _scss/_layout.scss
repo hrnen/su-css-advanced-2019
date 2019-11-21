@@ -8,9 +8,16 @@ body {
 }
 
 .site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+    @include bp(mobile) {
+
+    }
+    
+    @include bp(desktop) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 .card {
