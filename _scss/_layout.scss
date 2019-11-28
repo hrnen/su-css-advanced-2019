@@ -1,46 +1,21 @@
-
-.site {
-    max-width: var(--layout-width, 60em);
-    margin: 0 auto;
+.site-wrapper {
+	max-width: 75rem;
+	margin: 0 auto;
 }
 
 .site-header {
 
-    @include bp(mobile) {
-
-    }
-    
-    @include bp(desktop) {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
 }
 
-.card {
-    border: 2px solid #CCC;
+.site-media img {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
-.card p {
-    display: none;
+.site-content .site-wrapper {
 }
 
-.card p:first-of-type {
-    display: block;
-}
+.site-footer {
 
-.card .button .less {
-    display: none;
-}
-
-input:checked + .card p {
-    display: block;
-}
-
-input:checked + .card .button .more {
-    display: none;
-}
-
-input:checked + .card .button .less {
-    display: inline;
 }
