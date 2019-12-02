@@ -10,15 +10,12 @@
         padding: 0;
         margin: 0;
 
-        @include bp(desktop) {
-            display: flex;
-        }
-
         li {
             display: block;
             margin: 0 0.7em;
             transform: translate(0, -5em);
             opacity: 0;
+            position: relative;
             transition: opacity 0.3s ease-in, transform 0.3s ease-in;
 
             .loaded & {
@@ -26,41 +23,67 @@
                 transform: translate(0, 0);
             }
 
+            &:hover > ul {
+                display: block;
+            }
+
             @for $i from 1 through 9 {
                 &:nth-child(#{$i}) { transition-delay: $i * 0.1s; }
             }
 
+        }
+
+        @include bp(desktop) {
+            
+            ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                z-index: 1000;
+                background: #369;
+                border-radius: 0.3em;
+                padding: 0.8em 0;
+
+                ul {
+                    top: -0.8em;
+                    left: 100%;
+                }
+
+                a {
+                    color: #FFF;
+                }
+
+                li:hover > a,
+                a:hover {
+                    background: #FFF;
+                    color: #369;
+                }
+            }
+        }
+    }
+
+    & > ul {
+        @include bp(desktop) {
+            display: flex;
         }
     }
 
     a {
         display: flex;
         padding: 0.5em 1em;
-        background: #EEE;
-        color: #333;
+        color: #369;
         text-decoration: none;
-
-        &:before {
-            display: block;
-            margin-right: 0.5em;
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-        }
-        
-        @at-root .nav .current-page a,
-        &:hover {
-            background: #090;
-            color: #FFF;
-        }
-    
+        border-radius: 0.3em;
+        outline: none;
     }
 
-    li.page-title-about a:before {
-        content: '\f47f';
-    }
-
-    li.page-title-contacts a:before {
-        content: '\f2a0';
+    li:hover > a,
+    .current-page > a,
+    a:focus,
+    a:hover {
+        background: #369;
+        color: #FFF;
     }
 
 }
